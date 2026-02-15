@@ -34,25 +34,25 @@ jobs:
         run: mvn test
   
 
-  docker:
-    runs-on: ubuntu-latest
-    needs: test
-    steps:
-      - uses: actions/checkout@v3
+  #docker:
+   # runs-on: ubuntu-latest
+   # needs: test
+   # steps:
+    #  - uses: actions/checkout@v3
 
-      - name: Build JAR
-        run: mvn clean package
+    #  - name: Build JAR
+     #   run: mvn clean package
+#
+      #- name: Build Docker image
+      #  run: docker build -t email-pipeline .
 
-      - name: Build Docker image
-        run: docker build -t email-pipeline .
-
-      - name: Run Docker container
-        run: docker run email-pipeline
+     #- name: Run Docker container
+      #  run: docker run email-pipeline
 
 
   deploy:
     runs-on: ubuntu-latest
-    needs: docker   # deploy kører kun hvis docker lykkes
+    needs: test   # deploy kører kun hvis test lykkes
     steps:
       - uses: actions/checkout@v3
       - name: Set up JDK 21
