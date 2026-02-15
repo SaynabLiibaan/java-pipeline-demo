@@ -1,0 +1,3 @@
+com/example/pipeline/EmailSender.class
+com/example/pipeline/SmtpEmailSender.class
+com/example/App.class
