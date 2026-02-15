@@ -27,10 +27,9 @@
     </dependency>
   </dependencies>
 
-  <!-- DET HER ER DET VIGTIGE -->
+  <!-- Build plugins -->
   <build>
     <plugins>
-
       <!-- Compiler plugin -->
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
@@ -55,7 +54,6 @@
           </archive>
         </configuration>
       </plugin>
-
     </plugins>
   </build>
 
